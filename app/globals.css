@@ -1,26 +1,103 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ===== Design Tokens (LIGHT default) ===== */
+:root{
+  /* fonts akan diisi oleh next/font via layout.tsx */
+  --font-sans: ui-sans-serif, system-ui, Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Light palette */
+  --bg: #f8fafc;        /* slate-50 */
+  --fg: #0b1220;        /* almost-black */
+  --muted: #4b5563;     /* slate-600 */
+  --border: #e5e7eb;    /* slate-200 */
+  --card: #ffffff;      /* white */
+  --primary: #7c5cff;   /* brand */
+  --primary-contrast: #ffffff;
+
+  --container: 72rem;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
+/* Dark override (auto ikuti preferensi sistem) */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --bg: #0b0d10;
+    --fg: #e6eaf2;
+    --muted: #98a2b3;
+    --border: #1f242c;
+    --card: #0f1318;
+    --primary: #7c5cff;
+    --primary-contrast: #ffffff;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* OPTIONAL: paksa tema via atribut (untuk toggle nanti) */
+:root[data-theme="light"]{
+  --bg:#f8fafc; --fg:#0b1220; --muted:#4b5563; --border:#e5e7eb; --card:#ffffff; --primary:#7c5cff; --primary-contrast:#fff;
+}
+:root[data-theme="dark"]{
+  --bg:#0b0d10; --fg:#e6eaf2; --muted:#98a2b3; --border:#1f242c; --card:#0f1318; --primary:#7c5cff; --primary-contrast:#fff;
+}
+
+/* Base */
+html, body { height: 100%; }
+body { background: var(--bg); color: var(--fg); transition: background-color .25s, color .25s; }
+
+/* Token utilities */
+.bg-bg{ background-color: var(--bg); }
+.text-fg{ color: var(--fg); }
+.text-muted{ color: var(--muted); }
+.border-border{ border-color: var(--border); }
+.bg-card{ background-color: var(--card); }
+.bg-primary{ background-color: var(--primary); }
+.text-on-primary{ color: var(--primary-contrast); }
+.font-sans{ font-family: var(--font-sans); }
+.font-mono{ font-family: var(--font-mono); }
+
+/* Container helper */
+.container{ max-width: var(--container); margin-inline:auto; padding-inline:1rem; }
+
+/* Focus ring default */
+input, textarea, button, a { outline: none; }
+input:focus-visible, textarea:focus-visible, button:focus-visible, a:focus-visible {
+  box-shadow: 0 0 0 2px var(--primary), 0 0 0 4px var(--bg);
+  border-color: var(--primary);
+}
+
+/* Gradient text util untuk hero */
+.text-gradient{
+  background: linear-gradient(135deg, var(--primary) 0%, #00d4ff 60%, #22d3ee 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.card-hover {
+  transition: transform .15s ease, box-shadow .2s ease, border-color .15s ease;
+}
+.card-hover:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 30px rgba(0,0,0,.12);
+  border-color: color-mix(in oklab, var(--primary) 50%, var(--border));
+}
+
+.nav-link{
+  position: relative;
+  padding: .5rem .75rem;
+  border-radius: .75rem;
+  color: var(--muted);
+  transition: background-color .15s ease, color .15s ease;
+}
+.nav-link:hover{ background: color-mix(in oklab, var(--card) 85%, transparent); }
+.nav-link.is-active{ color: var(--fg); }
+.nav-link .nav-underline{
+  position: absolute; left: .75rem; right: .75rem; bottom: .25rem; height: 2px;
+  border-radius: 999px; background: color-mix(in oklab, var(--primary) 85%, white 0%);
+  transform-origin: left center; transform: scaleX(0);
+  animation: underline-in .24s ease forwards;
+}
+@keyframes underline-in { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-link .nav-underline{ animation: none; transform: none; }
 }
