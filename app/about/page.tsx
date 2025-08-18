@@ -68,7 +68,7 @@ export default function AboutPage() {
                 {
                   icon: <Layers className="w-4 h-4" />,
                   k: "Stack",
-                  v: "C++ · Python · TS · Next.js · ESP32",
+                  v: "C++ · Python · Java · TS · JS",
                 },
                 {
                   icon: <Workflow className="w-4 h-4" />,
@@ -100,10 +100,10 @@ export default function AboutPage() {
               <h2 className="text-lg font-semibold">Embedded & IoT</h2>
             </div>
             <p className="text-sm text-muted mb-3">
-              Breadboard to PCB. ESP32 + sensors, stream via serial/MQTT, log the truth and iterate.
+              From prototyping to production: build with ESP32 and sensors, stream data via MQTT, run basic FreeRTOS tasks, integrate AI on Edge Impulse, and design PCBs in KiCad.
             </p>
             <div className="flex flex-wrap gap-2">
-              {["ESP32", "I2C/SPI/UART", "FreeRTOS (basic)", "Edge Impulse", "MQTT"].map((s) => (
+              {["MQTT", "Edge Impulse", "FreeRTOS", "KiCad"].map((s) => (
                 <Pill key={s}>{s}</Pill>
               ))}
             </div>
@@ -115,10 +115,10 @@ export default function AboutPage() {
               <h2 className="text-lg font-semibold">Web Engineering</h2>
             </div>
             <p className="text-sm text-muted mb-3">
-              Clean UIs & reliable APIs. DX-first, accessible components, and sensible budgets.
+              Build scalable backends and clean interfaces. From APIs to dashboards with Next.js, React, and modern tooling that focus on DX & accessibility.
             </p>
             <div className="flex flex-wrap gap-2">
-              {["Next.js", "React", "REST", "Tailwind v4", "Zod"].map((s) => (
+              {["Next.js", "React", "REST", "Tailwind", "JS"].map((s) => (
                 <Pill key={s}>{s}</Pill>
               ))}
             </div>
@@ -130,10 +130,10 @@ export default function AboutPage() {
               <h2 className="text-lg font-semibold">Mobile & Apps</h2>
             </div>
             <p className="text-sm text-muted mb-3">
-              Lightweight Android (Kotlin/Compose) & small utilities that bridge hardware ↔ app.
+              Cross-platform with Flutter and native Android (Kotlin/Compose). Bridge sensors and APIs into lightweight apps with clean, reliable UX.
             </p>
             <div className="flex flex-wrap gap-2">
-              {["Kotlin", "Flutter (basic)", "Jetpack", "BLE/Wi-Fi"].map((s) => (
+              {["Kotlin", "Flutter", "Jetpack", "Compose"].map((s) => (
                 <Pill key={s}>{s}</Pill>
               ))}
             </div>
@@ -159,7 +159,7 @@ export default function AboutPage() {
             <div className="rounded-2xl border border-border/70 p-5 bg-card">
               <h3 className="text-sm text-muted mb-3">Languages</h3>
               <div className="flex flex-wrap gap-2">
-                {["C++", "Python", "TypeScript", "JavaScript", "Kotlin"].map((s) => (
+                {["C++", "Python", "TypeScript", "JavaScript", "Kotlin", "Dart"].map((s) => (
                   <Pill key={s}>{s}</Pill>
                 ))}
               </div>
@@ -167,7 +167,7 @@ export default function AboutPage() {
             <div className="rounded-2xl border border-border/70 p-5 bg-card">
               <h3 className="text-sm text-muted mb-3">Frameworks & Tools</h3>
               <div className="flex flex-wrap gap-2">
-                {["Next.js", "React", "Tailwind", "Vercel", "Linux", "Git", "Docker (basic)"].map((s) => (
+                {["Next.js", "React", "Vue", "Tailwind", "Vercel", "Linux", "Git", "Docker", "cPanel"].map((s) => (
                   <Pill key={s}>{s}</Pill>
                 ))}
               </div>
@@ -180,34 +180,55 @@ export default function AboutPage() {
           <ol className="relative border-s border-border/60 pl-8 grid gap-5">
             <li className="relative">
               <div className="absolute -start-9.75 top-1 w-3 h-3 rounded-full bg-[var(--bg)] ring-2 ring-[var(--primary)]" />
-              <p className="text-xs text-muted">2025 — now</p>
-              <p className="text-fg font-medium">Exploring embedded + web hybrids</p>
+              <p className="text-xs text-muted">2022 — now</p>
+              <p className="text-fg font-medium">Computer Engineering · UNNES</p>
               <p className="text-sm text-muted">
-                Streaming sensor data to web dashboards with Next.js (API routes & incremental updates).
+                Undergraduate studies in Computer Engineering, focusing on IoT systems, web backends, and mobile development.
               </p>
             </li>
             <li className="relative">
               <div className="absolute -start-9.75 top-1 w-3 h-3 rounded-full bg-[var(--bg)] ring-2 ring-[var(--primary)]/70" />
-              <p className="text-xs text-muted">2024</p>
-              <p className="text-fg font-medium">Portfolio iterations & small apps</p>
+              <p className="text-xs text-muted">2024 — now</p>
+              <p className="text-fg font-medium">Capstone Project: SICermat</p>
               <p className="text-sm text-muted">
-                Redesigns, experiments with animejs, and Tailwind v4 zero-config.
+                Wearable monitoring system using ESP32-C3 with BMI270 & MAX30102 sensors, integrated with Edge Impulse ML, and Flutter dashboard app.
               </p>
             </li>
             <li className="relative">
               <div className="absolute -start-9.75 top-1 w-3 h-3 rounded-full bg-[var(--bg)] ring-2 ring-[var(--primary)]/50" />
-              <p className="text-xs text-muted">Earlier</p>
-              <p className="text-fg font-medium">Foundations</p>
-              <p className="text-sm text-muted">C++, Python basics, microcontrollers, and frontend fundamentals.</p>
+              <p className="text-xs text-muted">2024</p>
+              <p className="text-fg font-medium">Rebuild Doswall App</p>
+              <p className="text-sm text-muted">Rebuilt Doswall mobile application with Flutter for cross-platform support, integrating REST API backend and real-time location services.</p>
             </li>
           </ol>
         </section>
 
         <section className="grid gap-4">
-          <div className="flex items-center gap-2">
-            <h2 className="text-xl font-semibold">Selected previews</h2>
-            <span className="text-xs text-muted">(full case studies will live on subdomains)</span>
+          <div className="flex items-center justify-between gap-2">
+            <div className="flex items-center gap-2">
+              <h2 className="text-xl font-semibold">Selected previews</h2>
+            </div>
+
+            <div className="flex items-center gap-2">
+              <a
+                href="https://works.deauport.id"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-3 py-1.5 rounded-xl border border-border hover:bg-card transition"
+              >
+                Works
+              </a>
+              <a
+                href="https://labs.deauport.id"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-3 py-1.5 rounded-xl border border-border hover:bg-card transition"
+              >
+                Labs
+              </a>
+            </div>
           </div>
+
           <div className="grid md:grid-cols-3 gap-3">
             {[
               {
@@ -244,24 +265,6 @@ export default function AboutPage() {
                 </div>
               </div>
             ))}
-          </div>
-          <div className="flex items-center gap-2">
-            <button
-              type="button"
-              className="px-3 py-1.5 rounded-xl border border-border hover:bg-card transition cursor-not-allowed"
-              title="Works will be on a subdomain soon"
-              aria-disabled="true"
-            >
-              Works (soon)
-            </button>
-            <button
-              type="button"
-              className="px-3 py-1.5 rounded-xl border border-border hover:bg-card transition cursor-not-allowed"
-              title="Labs will be on a subdomain soon"
-              aria-disabled="true"
-            >
-              Labs (soon)
-            </button>
           </div>
         </section>
 

@@ -99,8 +99,8 @@ export default function Home() {
           <ul className="grid sm:grid-cols-3 gap-3 text-sm">
             <Highlight
               icon={<GraduationCap className="w-3.5 h-3.5" />}
-              title="Program"
-              caption="Computer Engineering · UNNES"
+              title="Education"
+              caption="B.Tech in Computer Engineering · UNNES"
             />
             <Highlight
               icon={<Cpu className="w-3.5 h-3.5" />}
@@ -110,7 +110,7 @@ export default function Home() {
             <Highlight
               icon={<Boxes className="w-3.5 h-3.5" />}
               title="Stack"
-              caption="C++ · Python · TS · Next.js · ESP32"
+              caption="C++ • Python • Java • TS • JS"
             />
           </ul>
         </div>
@@ -118,25 +118,26 @@ export default function Home() {
 
       <section className="pb-12">
         <div className="container grid gap-4">
-          <SectionHeader title="Featured previews" hint="Full case akan di subdomain" />
-
-          <div className="flex items-center gap-2">
-            <a
-              href="https://works.deauport.id"
-              target="_blank"
-              className="px-3 py-1.5 rounded-xl border border-border hover:bg-card transition"
-              rel="noopener noreferrer"
-            >
-              Works
-            </a>
-            <a
-              href="https://labs.deauport.id"
-              target="_blank"
-              className="px-3 py-1.5 rounded-xl border border-border hover:bg-card transition"
-              rel="noopener noreferrer"
-            >
-              Labs
-            </a>
+          <div className="flex items-center justify-between">
+            <SectionHeader title="Featured previews" />
+            <div className="flex items-center gap-2">
+              <a
+                href="https://works.deauport.id"
+                target="_blank"
+                className="px-3 py-1.5 rounded-xl border border-border hover:bg-card transition"
+                rel="noopener noreferrer"
+              >
+                Works
+              </a>
+              <a
+                href="https://labs.deauport.id"
+                target="_blank"
+                className="px-3 py-1.5 rounded-xl border border-border hover:bg-card transition"
+                rel="noopener noreferrer"
+              >
+                Labs
+              </a>
+            </div>
           </div>
 
           <div className="grid md:grid-cols-3 gap-3">
@@ -153,7 +154,7 @@ export default function Home() {
             <Feature
               title="Deau UI"
               desc="Paket UI kecil untuk proyek pribadi dengan prinsip a11y-first."
-              stack={["React", "Tailwind v4", "Radix-lite"]}
+              stack={["React", "Tailwind", "Radix-lite"]}
             />
           </div>
         </div>
@@ -163,13 +164,13 @@ export default function Home() {
         <div className="container grid lg:grid-cols-2 gap-4">
           <article className="rounded-2xl border border-border/70 bg-card p-6 md:p-8 shadow-[0_10px_26px_color-mix(in_oklab,var(--primary)_12%,transparent)]">
             <h3 className="text-lg font-semibold">What I’m into</h3>
-            <p className="text-sm text-muted mt-2">
-              Menjembatani <span className="text-fg">hardware</span> dan{" "}
-              <span className="text-fg">web modern</span>: prototyping ESP32, alirkan data sensor ke API,
-              lalu rapiin UI/UX. Fokus pada kode yang terbaca, iterasi kecil, & DX yang mulus.
+            <p className="text-sm text-muted mt-3">
+              Menghubungkan <span className="text-fg">IoT/data</span> dengan <span className="text-fg">web modern</span>:
+              dari aliran data sensor → API & backend yang terukur → dashboard serta aplikasi
+              mobile yang bersih & aksesibel. Fokus pada kode yang terbaca, iterasi kecil, dan DX yang mulus.
             </p>
             <div className="flex flex-wrap gap-2 mt-4">
-              {["ESP32", "MQTT", "Next.js 15", "Tailwind v4", "Zod", "Kotlin"].map((s) => (
+              {["IoT", "Next.js", "Tailwind", "Flutter", "Kotlin"].map((s) => (
                 <Chip key={s}>{s}</Chip>
               ))}
             </div>
@@ -186,9 +187,9 @@ export default function Home() {
           <article className="rounded-2xl border border-border/70 bg-card p-6 md:p-8">
             <h3 className="text-lg font-semibold">Recent mini-notes</h3>
             <ul className="text-sm text-muted grid gap-2 mt-2">
-              <li>Rebuild portfolio: Next.js 15 + Tailwind v4, Theme switch, Auto-hide navbar.</li>
-              <li>Pipeline mini: ESP32 → MQTT → API route → dashboard live.</li>
-              <li>Contact form: Zod validation + SMTP (Gmail App Password).</li>
+              <li>Capstone SICermat: ESP32-C3 + BMI270 + MAX30102 → Edge Impulse → Flutter dashboard.</li>
+              <li>Doswall app: Flutter cross-platform rebuild, REST API integration, real-time location.</li>
+              <li>Backend on cPanel: Node.js API routes + auto extract ZIP + GitHub Actions deploy.</li>
             </ul>
           </article>
         </div>

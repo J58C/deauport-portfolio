@@ -4,16 +4,23 @@ import { ArrowDown, Github } from "lucide-react";
 
 export default function Hero() {
   const items = [
-    "ESP32",
-    "I²C/SPI/UART",
-    "Edge Impulse",
     "MQTT",
-    "Next.js 15",
-    "API Routes",
-    "Tailwind v4",
-    "Zod",
+    "Edge Impulse",
+    "FreeRTOS",
+    "Next.js",
+    "Node.js",
+    "Tailwind",
+    "React",
+    "Vue",
+    "Flutter",
     "Kotlin",
-    "BLE/Wi-Fi",
+    "Dart",
+    "cPanel",
+    "GitHub",
+    "C++",
+    "Python",
+    "Java",
+    "Kicad",
   ];
   const loop = [...items, ...items];
 
@@ -37,15 +44,16 @@ export default function Hero() {
         }}
       />
 
-      <div className="container grid gap-6">
+      <div className="container grid gap-5">
         <header className="grid gap-3 max-w-4xl">
-          <p className="text-sm uppercase tracking-wide text-fg">Portfolio</p>
+          <p className="text-muted text-xl uppercase tracking-wide text-fg">Portfolio</p>
 
           <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-            <span className="text-gradient">Hardware & Embedded</span>
+            <span className="text-gradient">Embedded Wearables</span>
             <br />
-            meets <br className="md:hidden" />{" "}
-            Modern Web Engineering.
+            meets Modern Web <br className="md:hidden" />{" "}
+            <br />
+            & Mobile. <br className="md:hidden" />{" "}
           </h1>
 
           <p className="text-muted text-base md:text-lg max-w-2xl">
