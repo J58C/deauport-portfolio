@@ -2,7 +2,6 @@ import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 import { ContactSchema } from "@/lib/contact-schema";
 
-// rate-limit sederhana (tetap sama)
 const WINDOW_MS = 60_000; const MAX_HITS = 5;
 const hits = new Map<string, number[]>();
 const rateLimit = (ip: string) => {

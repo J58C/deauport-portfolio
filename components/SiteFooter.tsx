@@ -4,7 +4,6 @@ export default function SiteFooter() {
   return (
     <footer className="mt-16">
       <div className="container">
-        {/* top: columns */}
         <div className="rounded-2xl border border-border/60 bg-bg/70 backdrop-blur-md p-6 md:p-8">
           <div className="grid md:grid-cols-4 gap-6">
             <div className="col-span-2">
@@ -42,10 +41,8 @@ export default function SiteFooter() {
             </div>
           </div>
 
-          {/* divider */}
           <div className="border-t border-border/60 my-6" />
 
-          {/* bottom: tiny bar */}
           <div className="flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-muted">
             <span>© {new Date().getFullYear()} Deauport</span>
             <span className="opacity-80">

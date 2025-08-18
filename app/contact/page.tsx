@@ -46,14 +46,13 @@ export default function ContactPage() {
     (key: keyof ContactInput) =>
     (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
       setForm({ ...form, [key]: e.target.value });
-      setFieldErr((prev) => ({ ...prev, [key]: [] })); // bersihkan error per field saat mengetik
+      setFieldErr((prev) => ({ ...prev, [key]: [] }));
     };
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (status === "sending") return;
 
-    // Validasi cepat di client
     const parsed = ContactSchema.safeParse(form);
     if (!parsed.success) {
       setStatus("err");
@@ -90,7 +89,6 @@ export default function ContactPage() {
   return (
     <main className="py-16 md:py-24">
       <div className="container max-w-5xl">
-        {/* Header */}
         <header className="grid gap-2 mb-8">
           <h1 className="text-3xl md:text-4xl font-semibold tracking-tight">Let’s build something.</h1>
           <p className="text-muted">
@@ -100,12 +98,9 @@ export default function ContactPage() {
 
         <div className="border-t border-border/60 my-8" />
 
-        {/* Grid: Form + Sidebar */}
         <div className="grid md:grid-cols-3 gap-6">
-          {/* FORM CARD */}
           <section className="md:col-span-2 rounded-2xl border border-border/60 bg-bg/70 backdrop-blur px-5 md:px-6 py-6 shadow-[0_8px_30px_rgb(0,0,0,0.08)]">
             <form onSubmit={onSubmit} className="grid gap-5">
-              {/* Honeypot (anti-bot) */}
               <div style={{ position: "absolute", left: "-9999px" }} aria-hidden>
                 <label>
                   Website
@@ -120,7 +115,6 @@ export default function ContactPage() {
                 </label>
               </div>
 
-              {/* Status alert */}
               {status !== "idle" && (
                 <div
                   role="status"
@@ -152,7 +146,6 @@ export default function ContactPage() {
                 </div>
               )}
 
-              {/* Two columns on desktop */}
               <div className="grid md:grid-cols-2 gap-4">
                 <Field
                   label="Name"
@@ -237,7 +230,6 @@ export default function ContactPage() {
             </form>
           </section>
 
-          {/* SIDEBAR CARD */}
           <aside className="rounded-2xl border border-border/60 bg-bg/70 backdrop-blur p-5 md:p-6 shadow-[0_8px_30px_rgb(0,0,0,0.08)] grid gap-4">
             <div>
               <h2 className="text-base font-semibold">Direct contact</h2>

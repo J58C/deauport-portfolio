@@ -75,12 +75,10 @@ export default function NavBar() {
     >
       <div className="container mt-3 mb-4">
         <div className="flex items-center justify-between gap-3 rounded-2xl border border-border/60 bg-bg/70 backdrop-blur-md px-3 md:px-4 h-14 shadow-[0_8px_30px_rgb(0,0,0,0.08)]">
-          {/* Brand */}
           <Link href="/" className="px-2 py-1 rounded-xl text-fg font-semibold tracking-tight">
             Deauport
           </Link>
 
-          {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-2">
             {links.map((l) =>
               l.type === "link" ? (
@@ -91,12 +89,10 @@ export default function NavBar() {
             )}
           </nav>
 
-          {/* Right: theme toggle */}
           <div className="hidden md:flex items-center gap-2">
             <ThemeSwitch />
           </div>
 
-          {/* Mobile hamburger */}
           <button
             className="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-xl border border-border
                        focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--primary)]
@@ -110,7 +106,6 @@ export default function NavBar() {
         </div>
       </div>
 
-      {/* Mobile sheet */}
       {open && (
         <>
           <div className="fixed inset-0 z-40 bg-black/40 md:hidden" onClick={() => setOpen(false)} />
