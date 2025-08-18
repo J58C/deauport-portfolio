@@ -9,8 +9,8 @@ import ThemeSwitch from "@/components/ThemeSwitch";
 const links = [
   { href: "/", label: "Home", type: "link" as const },
   { href: "/about", label: "About", type: "link" as const },
-  { href: "#", label: "Works", type: "soon" as const, title: "Will be on subdomain" },
-  { href: "#", label: "Labs", type: "soon" as const, title: "Will be on subdomain" },
+  { href: "https://works.deauport.id", label: "Works", type: "external" as const },
+  { href: "https://labs.deauport.id", label: "Labs", type: "external" as const },
   { href: "/contact", label: "Contact", type: "link" as const },
 ];
 
@@ -18,7 +18,6 @@ export default function NavBar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
-  // --- auto-hide on scroll ---
   const [hidden, setHidden] = useState(false);
   const lastY = useRef(0);
   const ticking = useRef(false);
@@ -42,7 +41,6 @@ export default function NavBar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // --- components ---
   const NavItem = ({ href, label, active }: { href: string; label: string; active?: boolean }) => (
     <Link
       href={href}
@@ -53,18 +51,15 @@ export default function NavBar() {
     </Link>
   );
 
-  const SoonItem = ({ label, title }: { label: string; title: string }) => (
-    <button
-      type="button"
-      title={title}
-      aria-disabled="true"
-      className="px-3 py-2 rounded-xl text-muted border border-border/80 bg-card/60 cursor-not-allowed hover:bg-card transition relative"
+  const ExternalItem = ({ href, label }: { href: string; label: string }) => (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="nav-link"
     >
-      {label}
-      <span className="ml-2 text-[10px] px-1.5 py-0.5 rounded bg-[var(--primary)]/15 text-[var(--primary)] border border-[var(--primary)]/30 align-middle">
-        soon
-      </span>
-    </button>
+      <span>{label}</span>
+    </a>
   );
 
   return (
@@ -84,7 +79,7 @@ export default function NavBar() {
               l.type === "link" ? (
                 <NavItem key={l.label} href={l.href} label={l.label} active={pathname === l.href} />
               ) : (
-                <SoonItem key={l.label} label={l.label} title={l.title!} />
+                <ExternalItem key={l.label} href={l.href} label={l.label} />
               )
             )}
           </nav>
@@ -126,7 +121,16 @@ export default function NavBar() {
                         {l.label}
                       </Link>
                     ) : (
-                      <SoonItem key={l.label} label={l.label} title={l.title!} />
+                      <a
+                        key={l.label}
+                        href={l.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-3 py-2 rounded-xl transition hover:bg-card text-fg"
+                        onClick={() => setOpen(false)}
+                      >
+                        {l.label}
+                      </a>
                     )
                   )}
                   <div className="mt-1">

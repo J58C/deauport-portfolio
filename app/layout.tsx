@@ -13,7 +13,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body className="bg-bg text-fg transition-colors">
         <NavBar />
-        <main className="mt-2">{children}</main>
+        <main>{children}</main>
         <SiteFooter />
       </body>
     </html>

@@ -30,9 +30,7 @@ function Highlight({
   return (
     <li
       className="group relative rounded-2xl border border-border/70 bg-card p-5
-                 transition will-change-transform
-                 shadow-brand hover:shadow-brand-lg
-                 hover:-translate-y-0.5 hover:border-[var(--primary)]/35"
+                 transition will-change-transform card-hover"
     >
       <div
         className="pointer-events-none absolute left-0 right-0 -top-px h-[2px]"
@@ -63,10 +61,8 @@ function Feature({
 }) {
   return (
     <article
-      className="rounded-2xl border border-border/70 bg-card overflow-hidden
-                 transition will-change-transform
-                 shadow-brand hover:shadow-brand-lg
-                 hover:-translate-y-0.5 hover:border-[var(--primary)]/40"
+      className="tilt relative rounded-2xl border border-border/70 bg-card overflow-hidden
+                 transition will-change-transform card-hover"
     >
       <div className="p-6">
         <h3 className="text-base md:text-lg font-semibold">{title}</h3>
@@ -82,6 +78,7 @@ function Feature({
           ))}
         </div>
       </div>
+      <div className="pointer-events-none absolute inset-x-0 -bottom-px h-[2px] bg-[radial-gradient(50%_120%_at_50%_0%,color-mix(in_oklab,var(--primary)_60%,transparent),transparent)]" />
     </article>
   );
 }
@@ -89,7 +86,10 @@ function Feature({
 export default function Home() {
   return (
     <main>
-      <Hero />
+      <section className="hero-wrap">
+        <div className="hero-overlay" aria-hidden="true" />
+        <Hero />
+      </section>
 
       <div className="my-12 h-px bg-gradient-to-r from-transparent via-[var(--border)]/35 to-transparent" />
 
@@ -121,22 +121,22 @@ export default function Home() {
           <SectionHeader title="Featured previews" hint="Full case akan di subdomain" />
 
           <div className="flex items-center gap-2">
-            <button
-              type="button"
-              className="px-3 py-1.5 rounded-xl border border-border hover:bg-card transition cursor-not-allowed"
-              aria-disabled="true"
-              title="Works will be on a subdomain soon"
+            <a
+              href="https://works.deauport.id"
+              target="_blank"
+              className="px-3 py-1.5 rounded-xl border border-border hover:bg-card transition"
+              rel="noopener noreferrer"
             >
-              Works (soon)
-            </button>
-            <button
-              type="button"
-              className="px-3 py-1.5 rounded-xl border border-border hover:bg-card transition cursor-not-allowed"
-              aria-disabled="true"
-              title="Labs will be on a subdomain soon"
+              Works
+            </a>
+            <a
+              href="https://labs.deauport.id"
+              target="_blank"
+              className="px-3 py-1.5 rounded-xl border border-border hover:bg-card transition"
+              rel="noopener noreferrer"
             >
-              Labs (soon)
-            </button>
+              Labs
+            </a>
           </div>
 
           <div className="grid md:grid-cols-3 gap-3">
@@ -161,15 +161,12 @@ export default function Home() {
 
       <section className="pb-16">
         <div className="container grid lg:grid-cols-2 gap-4">
-          <article
-            className="rounded-2xl border border-border/70 bg-card p-6 md:p-8
-                       shadow-[0_10px_26px_rgba(20,184,166,.06)]"
-          >
+          <article className="rounded-2xl border border-border/70 bg-card p-6 md:p-8 shadow-[0_10px_26px_color-mix(in_oklab,var(--primary)_12%,transparent)]">
             <h3 className="text-lg font-semibold">What I’m into</h3>
             <p className="text-sm text-muted mt-2">
               Menjembatani <span className="text-fg">hardware</span> dan{" "}
               <span className="text-fg">web modern</span>: prototyping ESP32, alirkan data sensor ke API,
-              lalu rapiin UI/UX. Aku prioritaskan code yang terbaca, iterasi kecil, & DX yang mulus.
+              lalu rapiin UI/UX. Fokus pada kode yang terbaca, iterasi kecil, & DX yang mulus.
             </p>
             <div className="flex flex-wrap gap-2 mt-4">
               {["ESP32", "MQTT", "Next.js 15", "Tailwind v4", "Zod", "Kotlin"].map((s) => (
@@ -186,15 +183,12 @@ export default function Home() {
             </a>
           </article>
 
-          <article
-            className="rounded-2xl border border-border/70 bg-card p-6 md:p-8
-                       shadow-[0_10px_26px_rgba(20,184,166,.06)]"
-          >
+          <article className="rounded-2xl border border-border/70 bg-card p-6 md:p-8">
             <h3 className="text-lg font-semibold">Recent mini-notes</h3>
             <ul className="text-sm text-muted grid gap-2 mt-2">
-              <li>✅ Rebuild portfolio: Next.js 15 + Tailwind v4, Theme switch, Auto-hide navbar.</li>
-              <li>🔌 Pipeline mini: ESP32 → MQTT → API route → dashboard live.</li>
-              <li>✉️ Contact form: Zod validation + SMTP (Gmail App Password).</li>
+              <li>Rebuild portfolio: Next.js 15 + Tailwind v4, Theme switch, Auto-hide navbar.</li>
+              <li>Pipeline mini: ESP32 → MQTT → API route → dashboard live.</li>
+              <li>Contact form: Zod validation + SMTP (Gmail App Password).</li>
             </ul>
           </article>
         </div>
@@ -202,10 +196,7 @@ export default function Home() {
 
       <section className="pb-20">
         <div className="container">
-          <div
-            className="rounded-2xl border border-border/70 p-6 md:p-8 bg-card
-                       shadow-[0_10px_26px_rgba(20,184,166,.06)]"
-          >
+          <div className="rounded-2xl border border-border/70 p-6 md:p-8 bg-card shadow-[0_10px_26px_color-mix(in_oklab,var(--primary)_12%,transparent)]">
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <div>
                 <h3 className="text-lg font-semibold">Have an idea to build?</h3>

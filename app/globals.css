@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+/* ---------- Tokens ---------- */
 :root{
   --font-sans: ui-sans-serif, system-ui, Arial, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
@@ -16,6 +17,12 @@
 
   --shadow: 0 8px 30px rgba(60, 40, 160, .10);
   --container: 72rem;
+
+  --about-bg-light: url("/about-bg-light.svg");
+  --about-bg-dark: url("/about-bg-dark.svg");
+
+  --hero-bg-light: url("/home-bg-light.svg");
+  --hero-bg-dark: url("/home-bg-dark.svg");
 }
 
 @media (prefers-color-scheme: dark) {
@@ -33,14 +40,19 @@
 }
 
 :root[data-theme="light"]{
+  --about-bg: var(--about-bg-light);
+  --hero-bg: var(--hero-bg-light);
   --bg:#f6f6fb; --card:#fff; --border:#e5e3f2; --fg:#0b0d16; --muted:#5d6073;
   --primary:#7c5cff; --primary-contrast:#fff; --ring:#8b79ff; --shadow:0 8px 30px rgba(60,40,160,.10);
 }
 :root[data-theme="dark"]{
+  --about-bg: var(--about-bg-dark);
+  --hero-bg: var(--hero-bg-dark);
   --bg:#0e0f14; --card:#13141c; --border:#26283a; --fg:#efeffa; --muted:#9aa0b5;
   --primary:#9f8bff; --primary-contrast:#0d0c16; --ring:#b2a3ff; --shadow:0 10px 40px rgba(130,110,255,.20);
 }
 
+/* ---------- Base ---------- */
 html, body { height: 100%; }
 body {
   background: var(--bg);
@@ -74,34 +86,72 @@ input, textarea { color: var(--fg); background-color: var(--bg); }
   color: transparent;
 }
 
-.hr-soft { height:1px; background: linear-gradient(90deg, transparent, color-mix(in oklab, var(--border) 85%, white), transparent); }
+.hr-soft {
+  height:1px;
+  background: linear-gradient(90deg, transparent, color-mix(in oklab, var(--border) 85%, white), transparent);
+}
 
+/* ---------- About hero ---------- */
+.about-hero {
+  position: relative;
+  background-image: var(--about-bg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+.about-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--card);
+  opacity: 0.65;
+  backdrop-filter: blur(12px);
+}
+.about-hero > * { position: relative; z-index: 1; }
+
+/* ---------- Home hero bg ---------- */
+.hero-wrap{
+  position: relative;
+  background-image: var(--hero-bg);
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+}
+.hero-overlay{
+  position:absolute; inset:0;
+  pointer-events:none;
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,.10), rgba(0,0,0,0) 40%),
+    linear-gradient(to bottom, transparent 70%, rgba(0,0,0,.06));
+}
+
+/* ---------- Cards helpers ---------- */
 .card-hover {
-  transition: transform .15s ease, box-shadow .20s ease, border-color .15s ease, background-color .15s ease;
+  transition: transform .18s ease, box-shadow .22s ease, border-color .18s ease, background-color .18s ease;
 }
 .card-hover:hover {
-  transform: translateY(-1px);
+  transform: translateY(-1.5px);
   box-shadow: var(--shadow);
   border-color: color-mix(in oklab, var(--primary) 42%, var(--border));
 }
 
-.card-accent {
-  position: relative;
-  overflow: hidden;
-}
+.card-accent { position: relative; overflow: hidden; }
 .card-accent::before{
   content:"";
   position:absolute; left:0; right:0; top:-1px; height:2px;
   background: linear-gradient(90deg, transparent, color-mix(in oklab, var(--primary) 75%, white 0%), transparent);
 }
 
-.shadow-brand {
-  box-shadow: 0 10px 26px color-mix(in oklab, var(--primary) 20%, transparent);
-}
-.hover\:shadow-brand-lg:hover {
-  box-shadow: 0 18px 48px color-mix(in oklab, var(--primary) 35%, transparent);
-}
+.shadow-brand { box-shadow: 0 10px 26px color-mix(in oklab, var(--primary) 20%, transparent); }
+.hover\:shadow-brand-lg:hover { box-shadow: 0 18px 48px color-mix(in oklab, var(--primary) 35%, transparent); }
 
+/* tilt hover (no JS) */
+.tilt { transform-style: preserve-3d; }
+.tilt:hover { transform: perspective(900px) rotateX(1.2deg) rotateY(-1.2deg) translateY(-2px); }
+
+/* ---------- Nav link ---------- */
 .nav-link{
   position: relative;
   padding: .5rem .75rem;
@@ -109,9 +159,7 @@ input, textarea { color: var(--fg); background-color: var(--bg); }
   color: var(--muted);
   transition: background-color .15s ease, color .15s ease;
 }
-.nav-link:hover{
-  background: color-mix(in oklab, var(--primary) 10%, var(--card) 90%);
-}
+.nav-link:hover{ background: color-mix(in oklab, var(--primary) 10%, var(--card) 90%); }
 .nav-link.is-active{ color: var(--fg); }
 .nav-link .nav-underline{
   position: absolute; left: .75rem; right: .75rem; bottom: .25rem; height: 2px;
@@ -124,4 +172,25 @@ input, textarea { color: var(--fg); background-color: var(--bg); }
 
 @media (prefers-reduced-motion: reduce) {
   .nav-link .nav-underline{ animation: none; transform: none; }
+}
+
+/* ---------- Marquee (strip teknologi) ---------- */
+.marquee { overflow: hidden; }
+.marquee-track{
+  display:flex; align-items:center; gap:.75rem;
+  list-style:none; margin:0; padding:0;
+  animation: scroll-x 24s linear infinite;
+  will-change: transform;
+  white-space: nowrap;
+}
+.marquee-item{
+  display:inline-flex; align-items:center;
+  font-size:12px; padding:.25rem .6rem;
+  border-radius:.6rem;
+  border:1px solid color-mix(in oklab, var(--border) 80%, transparent);
+  background: color-mix(in oklab, var(--card) 90%, transparent);
+}
+@keyframes scroll-x {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
 }
