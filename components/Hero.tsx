@@ -33,16 +33,14 @@ export default function Hero() {
         }}
       />
 
-      <div className="container grid gap-5">
+      <div className="container grid gap-6">
         <header className="grid gap-3 max-w-4xl">
           <p className="text-muted text-xl uppercase tracking-wide text-fg">Portfolio</p>
 
           <h1 className="text-4xl md:text-6xl font-bold leading-tight">
             <span className="text-gradient">Embedded Wearables</span>
             <br />
-            meets Modern Web <br className="md:hidden" />{" "}
-            <br />
-            & Mobile. <br className="md:hidden" />{" "}
+            meets Modern Web & Mobile.
           </h1>
 
           <p className="text-muted text-base md:text-lg max-w-2xl">

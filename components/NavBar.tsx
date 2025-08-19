@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ExternalLink } from "lucide-react";
 import ThemeSwitch from "@/components/ThemeSwitch";
 
 const links = [
@@ -42,10 +42,7 @@ export default function NavBar() {
   }, []);
 
   const NavItem = ({ href, label, active }: { href: string; label: string; active?: boolean }) => (
-    <Link
-      href={href}
-      className={`nav-link ${active ? "is-active" : ""}`}
-    >
+    <Link href={href} className={`nav-link ${active ? "is-active" : ""}`}>
       <span>{label}</span>
       {active && <span className="nav-underline" />}
     </Link>
@@ -57,8 +54,13 @@ export default function NavBar() {
       target="_blank"
       rel="noopener noreferrer"
       className="nav-link"
+      aria-label={`${label} (opens in new tab)`}
+      title={`${label} — opens in new tab`}
     >
-      <span>{label}</span>
+      <span className="inline-flex items-center gap-1.5">
+        {label}
+        <ExternalLink className="w-3.5 h-3.5 opacity-70" />
+      </span>
     </a>
   );
 
@@ -126,10 +128,15 @@ export default function NavBar() {
                         href={l.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="px-3 py-2 rounded-xl transition hover:bg-card text-fg"
                         onClick={() => setOpen(false)}
+                        className="px-3 py-2 rounded-xl transition hover:bg-card text-muted"
+                        aria-label={`${l.label} (opens in new tab)`}
+                        title={`${l.label} — opens in new tab`}
                       >
-                        {l.label}
+                        <span className="inline-flex items-center gap-1.5">
+                          {l.label}
+                          <ExternalLink className="w-3.5 h-3.5 opacity-70" />
+                        </span>
                       </a>
                     )
                   )}

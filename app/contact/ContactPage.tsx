@@ -37,10 +37,9 @@ function Field({
 }
 
 const PRESETS = [
-  "Project inquiry — web + embedded",
+  "Project inquiry",
   "Bug/Support on my repo",
-  "Collaboration / mentoring",
-  "Speaking invitation",
+  "Collaboration",
 ];
 
 export default function ContactPage() {
@@ -136,7 +135,7 @@ export default function ContactPage() {
   }
 
   return (
-    <main className="py-16 md:py-24">
+    <main className="pt-24 md:pt-28 pb-16 md:pb-24">
       <div className="container max-w-5xl grid gap-3">
         <header className="grid gap-2 mb-4">
           <div className="inline-flex items-center gap-2 text-[11px] px-2 py-1 rounded-lg border border-border/70 bg-bg w-fit">

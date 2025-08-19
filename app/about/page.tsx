@@ -25,7 +25,7 @@ function Pill({ children }: { children: React.ReactNode }) {
 
 export default function AboutPage() {
   return (
-    <main className="py-16 md:py-24">
+    <main className="pt-24 md:pt-28 pb-16 md:pb-24">
       <div className="container max-w-5xl grid gap-10">
 
         <section className="relative rounded-2xl border border-border/60 shadow-brand overflow-hidden">
