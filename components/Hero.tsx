@@ -4,17 +4,24 @@ import { ArrowDown, Github } from "lucide-react";
 
 export default function Hero() {
   const items = [
-  "MQTT", "Edge Impulse", "FreeRTOS", "KiCad",
-  "Next.js", "React", "Node.js", "Tailwind", "REST", "Vue",
-  "Flutter", "Kotlin", "Compose", "REST API", "Dart",
-  "cPanel", "GitHub", "PCB", "Schematic", "Gerber",
-  "C++", "Python", "Java",
-  "RNN", "LSTM", "Keras", "TensorFlow", "PyTorch",
-];
+    "MQTT", "Edge Impulse", "FreeRTOS", "KiCad",
+    "Next.js", "React", "Node.js", "Tailwind", "REST", "Vue",
+    "Flutter", "Kotlin", "Compose", "REST API", "Dart",
+    "cPanel", "GitHub", "PCB", "Schematic", "Gerber",
+    "C++", "Python", "Java",
+    "RNN", "LSTM", "Keras", "TensorFlow", "PyTorch",
+  ];
   const loop = [...items, ...items];
 
   return (
-    <section className="relative isolate overflow-hidden pt-20 md:pt-28 pb-16 md:pb-24">
+    <section
+      className="
+        relative isolate overflow-hidden
+        pt-24 md:pt-28 pb-10
+        min-h-[calc(100svh-5.5rem)]   /* full screen on mobile, minus navbar */
+        flex flex-col
+      "
+    >
       <div
         className="pointer-events-none absolute inset-0 -z-10 opacity-[0.9]"
         style={{
@@ -33,60 +40,67 @@ export default function Hero() {
         }}
       />
 
-      <div className="container grid gap-6">
-        <header className="grid gap-3 max-w-4xl">
-          <p className="text-muted text-xl uppercase tracking-wide text-fg">Portfolio</p>
+      <div className="container my-auto">
+        <div className="w-full flex flex-col items-start gap-6
+                        px-6 sm:px-8 md:px-10 lg:px-12">
+          <div className="flex-1 md:hidden" />
 
-          <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-            <span className="text-gradient">Embedded Wearables</span>
-            <br />
-            meets Modern Web & Mobile.
-          </h1>
+          <header className="grid gap-3 max-w-4xl text-left">
+            <p className="text-muted text-sm uppercase tracking-widest">Portfolio</p>
 
-          <p className="text-muted text-base md:text-lg max-w-2xl">
-            I build end-to-end projects—from circuits & microcontrollers to fast APIs
-            and clean, accessible UI.
-          </p>
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold leading-snug sm:leading-tight">
+              <span className="text-gradient">Embedded Wearables</span>
+              <br />
+              meets Modern Web &amp; Mobile.
+            </h1>
 
-          <div className="flex flex-wrap items-center gap-3 pt-1">
-            <a
-              href="https://works.deauport.id"
-              target="_blank"
-              className="inline-flex items-center px-4 py-2 rounded-xl bg-primary text-on-primary hover:opacity-90 transition
-                         focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--primary)]
-                         focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)]"
-              rel="noopener noreferrer"
-            >
-              See Works
-            </a>
+            <p className="text-muted text-base md:text-lg max-w-2xl">
+              I build end-to-end projects—from circuits &amp; microcontrollers to fast APIs
+              and clean, accessible UI.
+            </p>
 
-            <a
-              href="https://github.com/J58C"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-border hover:bg-card transition
-                         focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--primary)]
-                         focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)]"
-            >
-              <Github className="w-4 h-4" />
-              GitHub
-            </a>
+            <div className="flex flex-wrap items-center justify-start gap-3 pt-1">
+              <a
+                href="https://works.deauport.id"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-4 py-2 rounded-xl bg-primary text-on-primary hover:opacity-90 transition
+                          focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--primary)]
+                          focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)]"
+              >
+                See Works
+              </a>
+
+              <a
+                href="https://github.com/J58C"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-border hover:bg-card transition
+                          focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--primary)]
+                          focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)]"
+              >
+                <Github className="w-4 h-4" />
+                GitHub
+              </a>
+            </div>
+          </header>
+
+          <div className="w-full max-w-4xl rounded-2xl border border-border/70 bg-card/70 backdrop-blur card-accent px-3 md:px-4 py-2 overflow-hidden">
+            <div className="marquee">
+              <ul className="marquee-track flex items-center gap-2">
+                {loop.map((t, i) => (
+                  <li key={i} className="marquee-item">{t}</li>
+                ))}
+              </ul>
+            </div>
           </div>
-        </header>
 
-        <div className="rounded-2xl border border-border/70 bg-card/70 backdrop-blur card-accent px-3 md:px-4 py-2 overflow-hidden">
-          <div className="marquee">
-            <ul className="marquee-track flex items-center gap-2">
-              {loop.map((t, i) => (
-                <li key={i} className="marquee-item">{t}</li>
-              ))}
-            </ul>
+          <div className="flex-1 md:hidden" />
+
+          <div className="pt-2 md:pt-4 flex items-center gap-2 text-xs text-muted">
+            <ArrowDown className="w-4 h-4 animate-bounce" />
+            Scroll
           </div>
-        </div>
-
-        <div className="flex items-center gap-2 text-xs text-muted">
-          <ArrowDown className="w-4 h-4 animate-bounce" />
-          Scroll
         </div>
       </div>
     </section>

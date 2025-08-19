@@ -18,13 +18,14 @@
   --container: 72rem;
 
   --about-bg-light: url("/about-bg-light.svg");
-  --about-bg-dark: url("/about-bg-dark.svg");
-
-  --hero-bg-light: url("/home-bg-light.svg");
-  --hero-bg-dark: url("/home-bg-dark.svg");
+  --about-bg-dark:  url("/about-bg-dark.svg");
+  --hero-bg-light:  url("/home-bg-light.svg");
+  --hero-bg-dark:   url("/home-bg-dark.svg");
 
   --about-bg: var(--about-bg-light);
   --hero-bg:  var(--hero-bg-light);
+
+  --nav-offset: 5.5rem;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -44,23 +45,25 @@
   }
 }
 
+@media (min-width: 768px){
+  :root{ --nav-offset: 0rem; }
+  
+  .hero-min {
+    min-height: calc(100svh - 5.5rem);
+  }
+}
+
 :root[data-theme="light"]{
   --about-bg: var(--about-bg-light);
   --hero-bg: var(--hero-bg-light);
   --bg:#f6f6fb; --card:#fff; --border:#e5e3f2; --fg:#0b0d16; --muted:#5d6073;
   --primary:#7c5cff; --primary-contrast:#fff; --ring:#8b79ff; --shadow:0 8px 30px rgba(60,40,160,.10);
-
-  --about-bg: var(--about-bg-light);
-  --hero-bg:  var(--hero-bg-light);
 }
 :root[data-theme="dark"]{
   --about-bg: var(--about-bg-dark);
   --hero-bg: var(--hero-bg-dark);
   --bg:#0e0f14; --card:#13141c; --border:#26283a; --fg:#efeffa; --muted:#9aa0b5;
   --primary:#9f8bff; --primary-contrast:#0d0c16; --ring:#b2a3ff; --shadow:0 10px 40px rgba(130,110,255,.20);
-
-  --about-bg: var(--about-bg-dark);
-  --hero-bg:  var(--hero-bg-dark);
 }
 
 html, body { height: 100%; }
