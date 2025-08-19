@@ -100,7 +100,7 @@ export default function Home() {
             <Highlight
               icon={<GraduationCap className="w-3.5 h-3.5" />}
               title="Education"
-              caption="B.Tech in Computer Engineering · UNNES"
+              caption="Computer Engineering · UNNES"
             />
             <Highlight
               icon={<Cpu className="w-3.5 h-3.5" />}
@@ -142,19 +142,19 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-3">
             <Feature
-              title="EnviroSense"
-              desc="ESP32 + DHT22 → Next.js API → dashboard real-time."
-              stack={["ESP32", "MQTT", "Next.js API", "Tailwind", "Zod"]}
+              title="DeltaT32"
+              desc="Proyek PCB di KiCad — mulai dari schematic capture, mapping footprint, hingga routing 2‑layer. Hasilkan Gerber & BOM siap manufaktur."
+              stack={["KiCad", "PCB", "Schematic", "Layout", "Gerber"]}
             />
             <Feature
-              title="Decklight"
-              desc="Android BLE controller untuk LED strip; fokus latency & UX."
-              stack={["Kotlin", "BLE", "Compose"]}
+              title="Doswall (ex Dogoes)"
+              desc="Aplikasi pengumuman & geotag kampus. Berawal sebagai Dogoes (Kotlin), lalu di‑rebuild menjadi Doswall dengan Flutter/Dart + REST API."
+              stack={["Flutter", "Dart", "Kotlin", "REST API", "Geolocation"]}
             />
             <Feature
-              title="Deau UI"
-              desc="Paket UI kecil untuk proyek pribadi dengan prinsip a11y-first."
-              stack={["React", "Tailwind", "Radix-lite"]}
+              title="HAR RNN–LSTM (Prototype)"
+              desc="Human Activity Recognition dari data IMU time‑series. Eksperimen model RNN/LSTM; dihentikan karena akurasi rendah, menyisakan banyak pembelajaran."
+              stack={["Python", "Keras", "RNN/LSTM", "IMU", "Jupyter"]}
             />
           </div>
         </div>
@@ -186,10 +186,10 @@ export default function Home() {
 
           <article className="rounded-2xl border border-border/70 bg-card p-6 md:p-8">
             <h3 className="text-lg font-semibold">Recent mini-notes</h3>
-            <ul className="text-sm text-muted grid gap-2 mt-2">
-              <li>Capstone SICermat: ESP32-C3 + BMI270 + MAX30102 → Edge Impulse → Flutter dashboard.</li>
-              <li>Doswall app: Flutter cross-platform rebuild, REST API integration, real-time location.</li>
-              <li>Backend on cPanel: Node.js API routes + auto extract ZIP + GitHub Actions deploy.</li>
+            <ul className="text-sm text-muted grid gap-2 mt-2 list-disc list-inside">
+              <li>ESP32-C3 power test → bandingkan deep sleep vs light sleep; konsumsi idle ±200–300 µA.</li>
+              <li>Serial vs MQTT → uji latency data stream, MQTT lebih stabil untuk data sensor periodik.</li>
+              <li>Node.js on cPanel → auto-deploy via GitHub Actions + ekstrak ZIP langsung di server.</li>
             </ul>
           </article>
         </div>

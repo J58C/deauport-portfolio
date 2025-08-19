@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import {
-  Mail, User, MessageSquare, CheckCircle2, AlertTriangle, Loader2, ClipboardPaste, Sparkles
+  Mail, User, MessageSquare, CheckCircle2, AlertTriangle, Loader2, ClipboardPaste, Sparkles, Linkedin
 } from "lucide-react";
 import { ContactSchema, type ContactInput } from "@/lib/contact-schema";
 
@@ -336,14 +336,28 @@ export default function ContactPage() {
           <aside className="rounded-2xl border border-border/60 bg-bg/70 backdrop-blur-md p-5 md:p-6 shadow-[0_8px_30px_rgb(0,0,0,0.08)] grid gap-4">
             <div>
               <h2 className="text-base font-semibold">Direct contact</h2>
-              <p className="text-sm text-muted">Kalau lebih cepat via email:</p>
-              <a
-                className="mt-2 inline-flex items-center gap-2 px-3 py-2 rounded-xl border border-border hover:bg-card transition"
-                href="mailto:hello@deauport.id"
-              >
-                <Mail className="w-4 h-4" />
-                hello@deauport.id
-              </a>
+              <p className="text-sm text-muted">Kalau lebih cepat via email atau LinkedIn:</p>
+              
+              <div className="mt-2 flex flex-col gap-2">
+                <a
+                  className="inline-flex items-center gap-2 px-3 py-2 rounded-xl border border-border hover:bg-card transition"
+                  href="mailto:hello@deauport.id"
+                  target="_blank"
+                >
+                  <Mail className="w-4 h-4" />
+                  Mail
+                </a>
+
+                <a
+                  className="inline-flex items-center gap-2 px-3 py-2 rounded-xl border border-border hover:bg-card transition"
+                  href="https://www.linkedin.com/in/hafidhmusyafa"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Linkedin className="w-4 h-4" />
+                  LinkedIn
+                </a>
+              </div>
             </div>
 
             <div className="border-t border-border/60 my-2" />

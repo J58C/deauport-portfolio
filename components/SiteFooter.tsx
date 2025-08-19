@@ -1,15 +1,17 @@
 import Link from "next/link";
-import { Github, Linkedin } from "lucide-react";
+import { Github, Linkedin, FlaskConical, Briefcase } from "lucide-react";
 
 export default function SiteFooter() {
   const year = new Date().getFullYear();
 
   return (
     <footer className="mt-20">
+      {/* accent line */}
       <div className="h-px bg-gradient-to-r from-transparent via-[var(--border)]/60 to-transparent" />
 
       <div className="container py-10">
         <div className="relative rounded-2xl border border-border/70 bg-card/70 backdrop-blur p-6 md:p-8 overflow-hidden">
+          {/* subtle glow on top edge */}
           <div
             aria-hidden
             className="pointer-events-none absolute left-0 right-0 -top-px h-[2px]"
@@ -19,7 +21,9 @@ export default function SiteFooter() {
             }}
           />
 
-          <div className="grid gap-10 md:grid-cols-3">
+          {/* content */}
+          <div className="grid gap-8 md:grid-cols-3">
+            {/* Brand + quick actions */}
             <div className="grid gap-3">
               <Link
                 href="/"
@@ -41,6 +45,7 @@ export default function SiteFooter() {
                   className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl border border-border bg-card/10 hover:bg-card transition text-sm"
                   aria-label="Works (opens in new tab)"
                 >
+                  <Briefcase className="w-4 h-4" />
                   Works
                 </a>
                 <a
@@ -50,6 +55,7 @@ export default function SiteFooter() {
                   className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl border border-border bg-card/10 hover:bg-card transition text-sm"
                   aria-label="Labs (opens in new tab)"
                 >
+                  <FlaskConical className="w-4 h-4" />
                   Labs
                 </a>
                 <a
@@ -75,51 +81,28 @@ export default function SiteFooter() {
               </div>
             </div>
 
+            {/* Navigation – tanpa Works/Labs */}
             <div className="grid gap-3">
               <h4 className="text-xs uppercase tracking-wide text-muted">Navigation</h4>
               <nav className="grid gap-1.5 text-sm">
-                <Link
-                  href="/"
-                  className="px-2 py-1 rounded-lg hover:bg-card transition leading-none"
-                >
+                <Link href="/" className="px-2 py-1 rounded-lg hover:bg-card transition leading-none">
                   Home
                 </Link>
-                <Link
-                  href="/about"
-                  className="px-2 py-1 rounded-lg hover:bg-card transition leading-none"
-                >
+                <Link href="/about" className="px-2 py-1 rounded-lg hover:bg-card transition leading-none">
                   About
                 </Link>
-                <Link
-                  href="/contact"
-                  className="px-2 py-1 rounded-lg hover:bg-card transition leading-none"
-                >
+                <Link href="/contact" className="px-2 py-1 rounded-lg hover:bg-card transition leading-none">
                   Contact
                 </Link>
-                <a
-                  href="https://works.deauport.id"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-2 py-1 rounded-lg hover:bg-card transition leading-none"
-                >
-                  Works
-                </a>
-                <a
-                  href="https://labs.deauport.id"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-2 py-1 rounded-lg hover:bg-card transition leading-none"
-                >
-                  Labs
-                </a>
               </nav>
             </div>
 
+            {/* Notes – pendek & tidak mepet kanan */}
             <div className="grid gap-3">
               <h4 className="text-xs uppercase tracking-wide text-muted">Notes</h4>
               <ul className="grid gap-1.5 text-sm text-muted max-w-xs">
                 <li>Clean UI • fast • accessible.</li>
-                <li>Full cases live on Works & Labs.</li>
+                <li>Full cases on Works & Labs.</li>
               </ul>
 
               <a
@@ -132,6 +115,7 @@ export default function SiteFooter() {
             </div>
           </div>
 
+          {/* bottom bar */}
           <div className="mt-8 h-px bg-gradient-to-r from-transparent via-[var(--border)]/40 to-transparent" />
           <div className="mt-3 flex flex-col md:flex-row md:items-center justify-between gap-2">
             <p className="text-xs text-muted">

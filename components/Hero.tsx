@@ -4,24 +4,13 @@ import { ArrowDown, Github } from "lucide-react";
 
 export default function Hero() {
   const items = [
-    "MQTT",
-    "Edge Impulse",
-    "FreeRTOS",
-    "Next.js",
-    "Node.js",
-    "Tailwind",
-    "React",
-    "Vue",
-    "Flutter",
-    "Kotlin",
-    "Dart",
-    "cPanel",
-    "GitHub",
-    "C++",
-    "Python",
-    "Java",
-    "Kicad",
-  ];
+  "MQTT", "Edge Impulse", "FreeRTOS", "KiCad",
+  "Next.js", "React", "Node.js", "Tailwind", "REST", "Vue",
+  "Flutter", "Kotlin", "Compose", "REST API", "Dart",
+  "cPanel", "GitHub", "PCB", "Schematic", "Gerber",
+  "C++", "Python", "Java",
+  "RNN", "LSTM", "Keras", "TensorFlow", "PyTorch",
+];
   const loop = [...items, ...items];
 
   return (

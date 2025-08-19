@@ -177,30 +177,63 @@ export default function AboutPage() {
 
         <section className="grid gap-4">
           <h2 className="text-xl font-semibold">A short timeline</h2>
-          <ol className="relative border-s border-border/60 pl-8 grid gap-5">
-            <li className="relative">
-              <div className="absolute -start-9.75 top-1 w-3 h-3 rounded-full bg-[var(--bg)] ring-2 ring-[var(--primary)]" />
-              <p className="text-xs text-muted">2022 — now</p>
-              <p className="text-fg font-medium">Computer Engineering · UNNES</p>
-              <p className="text-sm text-muted">
-                Undergraduate studies in Computer Engineering, focusing on IoT systems, web backends, and mobile development.
-              </p>
-            </li>
-            <li className="relative">
-              <div className="absolute -start-9.75 top-1 w-3 h-3 rounded-full bg-[var(--bg)] ring-2 ring-[var(--primary)]/70" />
-              <p className="text-xs text-muted">2024 — now</p>
-              <p className="text-fg font-medium">Capstone Project: SICermat</p>
-              <p className="text-sm text-muted">
-                Wearable monitoring system using ESP32-C3 with BMI270 & MAX30102 sensors, integrated with Edge Impulse ML, and Flutter dashboard app.
-              </p>
-            </li>
-            <li className="relative">
-              <div className="absolute -start-9.75 top-1 w-3 h-3 rounded-full bg-[var(--bg)] ring-2 ring-[var(--primary)]/50" />
-              <p className="text-xs text-muted">2024</p>
-              <p className="text-fg font-medium">Rebuild Doswall App</p>
-              <p className="text-sm text-muted">Rebuilt Doswall mobile application with Flutter for cross-platform support, integrating REST API backend and real-time location services.</p>
-            </li>
-          </ol>
+          <div className="relative">
+            <div className="absolute left-24 top-0 bottom-0 w-px bg-[var(--border)]/60 pointer-events-none" />
+
+            <ol className="grid gap-6">
+              <li className="grid grid-cols-[6rem_1fr] gap-4 items-start relative">
+                <div className="w-24 text-xs text-muted relative">
+                  2022 — Now
+                  <span className="absolute right-[-7px] top-1.5 w-2.5 h-2.5 rounded-full bg-[var(--primary)]" />
+                </div>
+                <div>
+                  <p className="text-fg font-medium flex items-center gap-2">
+                    Computer Engineering · UNNES
+                    <span className="text-[10px] px-2 py-0.5 rounded-md border border-border/70 bg-bg text-muted">
+                      Ongoing
+                    </span>
+                  </p>
+                  <p className="text-sm text-muted">
+                    Fokus kuat pada <span className="text-fg">IoT & embedded systems</span>:
+                    microcontrollers, perancangan PCB, optimasi low‑power, serta integrasi device‑to‑cloud.
+                  </p>
+                </div>
+              </li>
+
+              <li className="grid grid-cols-[6rem_1fr] gap-4 items-start relative">
+                <div className="w-24 text-xs text-muted relative">
+                  2024 — Now
+                  <span className="absolute right-[-7px] top-1.5 w-2.5 h-2.5 rounded-full bg-[var(--primary)]/80" />
+                </div>
+                <div>
+                  <p className="text-fg font-medium flex items-center gap-2">
+                    Capstone Project: SICermat
+                    <span className="text-[10px] px-2 py-0.5 rounded-md border border-border/70 bg-bg text-muted">
+                      Ongoing
+                    </span>
+                  </p>
+                  <p className="text-sm text-muted">
+                    Wearable monitoring dengan ESP32‑C3 (BMI270 & MAX30102), integrasi Edge Impulse ML,
+                    dan dashboard Flutter.
+                  </p>
+                </div>
+              </li>
+
+              <li className="grid grid-cols-[6rem_1fr] gap-4 items-start relative">
+                <div className="w-24 text-xs text-muted relative">
+                  2024
+                  <span className="absolute right-[-7px] top-1.5 w-2.5 h-2.5 rounded-full bg-[var(--primary)]/60" />
+                </div>
+                <div>
+                  <p className="text-fg font-medium">Rebuild Doswall App</p>
+                  <p className="text-sm text-muted">
+                    Rebuild dari Dogoes (Kotlin) ke Flutter/Dart untuk cross‑platform,
+                    dengan REST API dan geolokasi real‑time.
+                  </p>
+                </div>
+              </li>
+            </ol>
+          </div>
         </section>
 
         <section className="grid gap-4">
@@ -232,19 +265,22 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-3 gap-3">
             {[
               {
-                title: "EnviroSense",
-                brief: "ESP32 + temp/humidity sensor → live dashboard.",
-                stack: ["ESP32", "MQTT", "Next.js", "Tailwind"],
+                title: "DeltaT32",
+                brief:
+                  "PCB design di KiCad: mulai dari schematic capture, penentuan footprint, penataan net/label, hingga routing 2‑layer yang mempertimbangkan lebar trace & clearance. Output akhir: BOM dan berkas Gerber siap manufaktur.",
+                stack: ["KiCad", "PCB", "Schematic", "Layout", "Gerber"],
               },
               {
-                title: "Decklight",
-                brief: "Android BLE control for LED strips.",
-                stack: ["Kotlin", "BLE", "Compose"],
+                title: "Doswall (ex Dogoes)",
+                brief:
+                  "Aplikasi pengumuman & geotag kampus. Awalnya Dogoes (native Android/Kotlin), lalu di‑rebuild menjadi Doswall dengan Flutter/Dart untuk dukungan lintas platform. Integrasi REST API, autentikasi, dan pengambilan lokasi real‑time.",
+                stack: ["Flutter", "Dart", "Kotlin", "REST API", "Geolocation"],
               },
               {
-                title: "Deau UI",
-                brief: "Minimal UI kit for personal apps.",
-                stack: ["React", "Tailwind", "Radix (light)"],
+                title: "HAR RNN–LSTM (Prototype)",
+                brief:
+                  "Eksperimen Human Activity Recognition berbasis time‑series IMU. Pipeline: pra‑proses data (windowing/normalisasi) → arsitektur RNN/LSTM (Keras/TensorFlow) → evaluasi akurasi. Proyek dihentikan karena akurasi rendah, tapi menghasilkan banyak catatan untuk pendekatan Edge ML berikutnya.",
+                stack: ["Python", "Keras", "TensorFlow", "RNN/LSTM", "IMU"],
               },
             ].map((p) => (
               <div
