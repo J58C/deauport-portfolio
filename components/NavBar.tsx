@@ -105,7 +105,11 @@ export default function NavBar() {
 
       {open && (
         <>
-          <div className="fixed inset-0 z-40 bg-black/40 md:hidden" onClick={() => setOpen(false)} />
+          <button
+            aria-label="Close menu overlay"
+            onClick={() => setOpen(false)}
+            className="fixed inset-0 z-40 md:hidden bg-transparent"
+          />
           <div className="md:hidden fixed top-[5.5rem] left-0 right-0 z-50">
             <div className="container">
               <div className="rounded-2xl border border-border/60 bg-bg/90 backdrop-blur-md p-3 shadow-lg">
