@@ -7,7 +7,9 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 export const metadata: Metadata = {
   title: { default: "Deauport", template: "%s · Deauport" },
   description: "Portfolio — web, mobile, embedded systems, and hardware design.",
-  icons: "/favicon.ico"
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
