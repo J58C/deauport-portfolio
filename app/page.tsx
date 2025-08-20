@@ -50,39 +50,6 @@ function Highlight({
   );
 }
 
-function Feature({
-  title,
-  desc,
-  stack,
-}: {
-  title: string;
-  desc: string;
-  stack: string[];
-}) {
-  return (
-    <article
-      className="tilt relative rounded-2xl border border-border/70 bg-card overflow-hidden
-                 transition will-change-transform card-hover"
-    >
-      <div className="p-6">
-        <h3 className="text-base md:text-lg font-semibold">{title}</h3>
-        <p className="text-sm text-muted mt-1">{desc}</p>
-        <div className="flex flex-wrap gap-1.5 mt-3">
-          {stack.map((s) => (
-            <span
-              key={s}
-              className="text-[11px] px-2 py-0.5 rounded-lg border border-border/70 bg-bg"
-            >
-              {s}
-            </span>
-          ))}
-        </div>
-      </div>
-      <div className="pointer-events-none absolute inset-x-0 -bottom-px h-[2px] bg-[radial-gradient(50%_120%_at_50%_0%,color-mix(in_oklab,var(--primary)_60%,transparent),transparent)]" />
-    </article>
-  );
-}
-
 export default function Home() {
   return (
     <main>
@@ -92,7 +59,6 @@ export default function Home() {
       </section>
 
       <div className="my-12 h-px bg-gradient-to-r from-transparent via-[var(--border)]/35 to-transparent" />
-
       <section className="pt-2 pb-10">
         <div className="container grid gap-4">
           <SectionHeader title="Highlights" hint="Quick facts" />
@@ -113,50 +79,6 @@ export default function Home() {
               caption="C++ • Python • Java • TS • JS"
             />
           </ul>
-        </div>
-      </section>
-
-      <section className="pb-12">
-        <div className="container grid gap-4">
-          <div className="flex items-center justify-between">
-            <SectionHeader title="Featured previews" />
-            <div className="flex items-center gap-2">
-              <a
-                href="https://works.deauport.id"
-                target="_blank"
-                className="px-3 py-1.5 rounded-xl border border-border hover:bg-card transition"
-                rel="noopener noreferrer"
-              >
-                Works
-              </a>
-              <a
-                href="https://labs.deauport.id"
-                target="_blank"
-                className="px-3 py-1.5 rounded-xl border border-border hover:bg-card transition"
-                rel="noopener noreferrer"
-              >
-                Labs
-              </a>
-            </div>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-3">
-            <Feature
-              title="DeltaT32"
-              desc="Proyek PCB di KiCad — mulai dari schematic capture, mapping footprint, hingga routing 2‑layer. Hasilkan Gerber & BOM siap manufaktur."
-              stack={["KiCad", "PCB", "Schematic", "Layout", "Gerber"]}
-            />
-            <Feature
-              title="Doswall (ex Dogoes)"
-              desc="Aplikasi pengumuman & geotag kampus. Berawal sebagai Dogoes (Kotlin), lalu di‑rebuild menjadi Doswall dengan Flutter/Dart + REST API."
-              stack={["Flutter", "Dart", "Kotlin", "REST API", "Geolocation"]}
-            />
-            <Feature
-              title="HAR RNN–LSTM (Prototype)"
-              desc="Human Activity Recognition dari data IMU time‑series. Eksperimen model RNN/LSTM; dihentikan karena akurasi rendah, menyisakan banyak pembelajaran."
-              stack={["Python", "Keras", "RNN/LSTM", "IMU", "Jupyter"]}
-            />
-          </div>
         </div>
       </section>
 

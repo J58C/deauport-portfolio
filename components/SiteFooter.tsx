@@ -6,12 +6,10 @@ export default function SiteFooter() {
 
   return (
     <footer className="mt-20">
-      {/* accent line */}
       <div className="h-px bg-gradient-to-r from-transparent via-[var(--border)]/60 to-transparent" />
 
       <div className="container py-10">
         <div className="relative rounded-2xl border border-border/70 bg-card/70 backdrop-blur p-6 md:p-8 overflow-hidden">
-          {/* subtle glow on top edge */}
           <div
             aria-hidden
             className="pointer-events-none absolute left-0 right-0 -top-px h-[2px]"
@@ -21,16 +19,14 @@ export default function SiteFooter() {
             }}
           />
 
-          {/* content */}
           <div className="grid gap-8 md:grid-cols-3">
-            {/* Brand + quick actions */}
             <div className="grid gap-3">
               <Link
                 href="/"
                 className="inline-flex w-fit px-2 py-1 rounded-xl hover:bg-card transition"
                 aria-label="Deauport Home"
               >
-                <span className="text-fg font-semibold tracking-tight">Deauport</span>
+                <span className="text-fg tracking-tight font-brand text-lg">Déauport</span>
               </Link>
 
               <p className="text-sm text-muted max-w-sm">
@@ -81,7 +77,6 @@ export default function SiteFooter() {
               </div>
             </div>
 
-            {/* Navigation – tanpa Works/Labs */}
             <div className="grid gap-3">
               <h4 className="text-xs uppercase tracking-wide text-muted">Navigation</h4>
               <nav className="grid gap-1.5 text-sm">
@@ -97,7 +92,6 @@ export default function SiteFooter() {
               </nav>
             </div>
 
-            {/* Notes – pendek & tidak mepet kanan */}
             <div className="grid gap-3">
               <h4 className="text-xs uppercase tracking-wide text-muted">Notes</h4>
               <ul className="grid gap-1.5 text-sm text-muted max-w-xs">
@@ -115,11 +109,10 @@ export default function SiteFooter() {
             </div>
           </div>
 
-          {/* bottom bar */}
           <div className="mt-8 h-px bg-gradient-to-r from-transparent via-[var(--border)]/40 to-transparent" />
           <div className="mt-3 flex flex-col md:flex-row md:items-center justify-between gap-2">
             <p className="text-xs text-muted">
-              © {year} Deauport. Built with Next.js & Tailwind.
+              © {year} Déauport. Built with Next.js & Tailwind.
             </p>
             <div className="flex items-center gap-3 text-xs text-muted">
               <span className="hidden md:inline">Status:</span>

@@ -5,20 +5,19 @@ import { ArrowDown, Github } from "lucide-react";
 export default function Hero() {
   const items = [
     "MQTT", "Edge Impulse", "FreeRTOS", "KiCad",
-    "Next.js", "React", "Node.js", "Tailwind", "REST", "Vue",
+    "Next.js", "React", "Node.js", "Tailwind", "Vue",
     "Flutter", "Kotlin", "Compose", "REST API", "Dart",
     "cPanel", "GitHub", "PCB", "Schematic", "Gerber",
     "C++", "Python", "Java",
     "RNN", "LSTM", "Keras", "TensorFlow", "PyTorch",
   ];
-  const loop = [...items, ...items];
 
   return (
     <section
       className="
         relative isolate overflow-hidden
         pt-24 md:pt-28 pb-10
-        min-h-[calc(100svh-5.5rem)]   /* full screen on mobile, minus navbar */
+        min-h-[calc(100svh-5.5rem)]
         flex flex-col
       "
     >
@@ -41,8 +40,7 @@ export default function Hero() {
       />
 
       <div className="container my-auto">
-        <div className="w-full flex flex-col items-start gap-6
-                        px-6 sm:px-8 md:px-10 lg:px-12">
+        <div className="w-full flex flex-col items-start gap-6 px-6 sm:px-8 md:px-10 lg:px-12">
           <div className="flex-1 md:hidden" />
 
           <header className="grid gap-3 max-w-4xl text-left">
@@ -65,8 +63,8 @@ export default function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center px-4 py-2 rounded-xl bg-primary text-on-primary hover:opacity-90 transition
-                          focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--primary)]
-                          focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)]"
+                           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--primary)]
+                           focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)]"
               >
                 See Works
               </a>
@@ -76,8 +74,8 @@ export default function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-border hover:bg-card transition
-                          focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--primary)]
-                          focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)]"
+                           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--primary)]
+                           focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)]"
               >
                 <Github className="w-4 h-4" />
                 GitHub
@@ -86,10 +84,15 @@ export default function Hero() {
           </header>
 
           <div className="w-full max-w-4xl rounded-2xl border border-border/70 bg-card/70 backdrop-blur card-accent px-3 md:px-4 py-2 overflow-hidden">
-            <div className="marquee">
-              <ul className="marquee-track flex items-center gap-2">
-                {loop.map((t, i) => (
-                  <li key={i} className="marquee-item">{t}</li>
+            <div className="marquee-smooth" style={{ height: "2rem" }}>
+              <ul className="track" aria-hidden="false">
+                {items.map((t, i) => (
+                  <li key={`a-${i}`} className="marquee-item">{t}</li>
+                ))}
+              </ul>
+              <ul className="track dup" aria-hidden="true">
+                {items.map((t, i) => (
+                  <li key={`b-${i}`} className="marquee-item">{t}</li>
                 ))}
               </ul>
             </div>
