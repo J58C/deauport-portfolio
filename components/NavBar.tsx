@@ -72,7 +72,7 @@ export default function NavBar() {
     >
       <div className="container mt-3 mb-4">
         <div className="flex items-center justify-between gap-3 rounded-2xl border border-border/60 bg-bg/70 backdrop-blur-md px-3 md:px-4 h-14 shadow-[0_8px_30px_rgb(0,0,0,0.08)]">
-          <Link href="/" className="px-2 py-1 rounded-xl text-fg tracking-tight font-brand text-xl">
+          <Link href="/" className="px-2 py-1 rounded-xl text-fg tracking-tight font-brand text-xl" >
             Déauport
           </Link>
 
