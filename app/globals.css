@@ -3,7 +3,7 @@
 :root{
   --font-sans: ui-sans-serif, system-ui, Arial, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
-  --font-brand: "Playfair Display", serif;
+  --font-brand: "Space Grotesk", sans-serif;
 
   --bg: #f6f6fb;
   --card: #ffffff;
@@ -68,7 +68,7 @@ body {
 .text-on-primary{ color: var(--primary-contrast); }
 .font-sans{ font-family: var(--font-sans); }
 .font-mono{ font-family: var(--font-mono); }
-.font-brand {font-family: var(--font-brand);}
+.font-brand {font-family: var(--font-brand); letter-spacing: -0.5px; }
 .container{ max-width: var(--container); margin-inline:auto; padding-inline:1rem; }
 
 input, textarea, button, a { outline: none; }
