@@ -23,6 +23,11 @@
 
   --hero-bg-light: url("/home-bg-light.svg");
   --hero-bg-dark: url("/home-bg-dark.svg");
+
+  --about-bg: var(--about-bg-light);
+  --hero-bg: var(--hero-bg-light);
+
+  color-scheme: light dark;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -36,6 +41,9 @@
     --primary-contrast: #0d0c16;
     --ring: #b2a3ff;
     --shadow: 0 10px 40px rgba(130, 110, 255, .20);
+
+    --about-bg: var(--about-bg-dark);
+    --hero-bg: var(--hero-bg-dark);
   }
 }
 
@@ -68,7 +76,7 @@ body {
 .text-on-primary{ color: var(--primary-contrast); }
 .font-sans{ font-family: var(--font-sans); }
 .font-mono{ font-family: var(--font-mono); }
-.font-brand {font-family: var(--font-brand); letter-spacing: -0.5px; }
+.font-brand { font-family: var(--font-brand); letter-spacing: -0.5px; }
 .container{ max-width: var(--container); margin-inline:auto; padding-inline:1rem; }
 
 input, textarea, button, a { outline: none; }
