@@ -106,7 +106,7 @@ export default function Home() {
             </a>
           </article>
 
-          <article className="rounded-2xl border border-border/70 bg-card p-6 md:p-8">
+          <article className="rounded-2xl border border-border/70 bg-card p-6 md:p-8 shadow-[0_10px_26px_color-mix(in_oklab,var(--primary)_12%,transparent)]">
             <h3 className="text-lg font-semibold">Recent mini-notes</h3>
             <ul className="text-sm text-muted grid gap-2 mt-2 list-disc list-inside">
               <li>ESP32-C3 power test → bandingkan deep sleep vs light sleep; konsumsi idle ±200–300 µA.</li>
