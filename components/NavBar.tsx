@@ -9,8 +9,7 @@ import ThemeSwitch from "@/components/ThemeSwitch";
 const links = [
   { href: "/", label: "Home", type: "link" as const },
   { href: "/about", label: "About", type: "link" as const },
-  { href: "https://works.deauport.id", label: "Works", type: "external" as const },
-  { href: "https://labs.deauport.id", label: "Labs", type: "external" as const },
+  { href: "https://apps.deauport.id", label: "Labs", type: "external" as const },
   { href: "/contact", label: "Contact", type: "link" as const },
 ];
 

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Github, Linkedin, FlaskConical, Briefcase } from "lucide-react";
+import { Github, Linkedin, FlaskConical } from "lucide-react";
 
 export default function SiteFooter() {
   const year = new Date().getFullYear();
@@ -35,17 +35,7 @@ export default function SiteFooter() {
 
               <div className="flex flex-wrap gap-2 pt-1">
                 <a
-                  href="https://works.deauport.id"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl border border-border bg-card/10 hover:bg-card transition text-sm"
-                  aria-label="Works (opens in new tab)"
-                >
-                  <Briefcase className="w-4 h-4" />
-                  Works
-                </a>
-                <a
-                  href="https://labs.deauport.id"
+                  href="https://apps.deauport.id"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl border border-border bg-card/10 hover:bg-card transition text-sm"
@@ -96,7 +86,7 @@ export default function SiteFooter() {
               <h4 className="text-xs uppercase tracking-wide text-muted">Notes</h4>
               <ul className="grid gap-1.5 text-sm text-muted max-w-xs">
                 <li>Clean UI • fast • accessible.</li>
-                <li>Full cases on Works & Labs.</li>
+                <li>Full cases on Labs.</li>
               </ul>
 
               <a

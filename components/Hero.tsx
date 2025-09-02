@@ -59,14 +59,14 @@ export default function Hero() {
 
             <div className="flex flex-wrap items-center justify-start gap-3 pt-1">
               <a
-                href="https://works.deauport.id"
+                href="https://apps.deauport.id"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center px-4 py-2 rounded-xl bg-primary text-on-primary hover:opacity-90 transition
                            focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--primary)]
                            focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)]"
               >
-                See Works
+                See Labs
               </a>
 
               <a

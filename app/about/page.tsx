@@ -9,8 +9,8 @@ import {
   Gauge,
   Layers,
   Workflow,
-  FlaskConical,
-  Briefcase,
+  FlaskConical, // keep
+  // Briefcase, // HAPUS
 } from "lucide-react";
 
 export const metadata = {
@@ -61,17 +61,9 @@ export default function AboutPage() {
             </header>
 
             <div className="mt-5 flex flex-wrap gap-2">
+              {/* HAPUS tombol Works */}
               <a
-                href="https://works.deauport.id"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-soft"
-              >
-                <Briefcase className="w-4 h-4" />
-                Works
-              </a>
-              <a
-                href="https://labs.deauport.id"
+                href="https://apps.deauport.id"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-soft"
