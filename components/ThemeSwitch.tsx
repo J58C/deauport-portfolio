@@ -8,6 +8,7 @@ type Pref = "light" | "dark" | null;
 export default function ThemeSwitch() {
   const [pref, setPref] = useState<Pref>(null);
   const [systemDark, setSystemDark] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   function applyTheme(p: Pref) {
     const root = document.documentElement;
@@ -21,10 +22,12 @@ export default function ThemeSwitch() {
   }
 
   useEffect(() => {
-    const saved = (localStorage.getItem("theme") as Pref) || null;
+    setMounted(true);
 
+    const saved = (localStorage.getItem("theme") as Pref) || null;
     const mq = window.matchMedia("(prefers-color-scheme: dark)");
     const initialSys = mq.matches;
+
     setSystemDark(initialSys);
     applyTheme(saved);
     setPref(saved);
@@ -33,22 +36,25 @@ export default function ThemeSwitch() {
       setSystemDark(e.matches);
       if (saved === null) applyTheme(null);
     };
+
     mq.addEventListener("change", onChange);
     return () => mq.removeEventListener("change", onChange);
   }, []);
 
-  const currentIsDark = pref === null ? systemDark : pref === "dark";
+  if (!mounted) {
+    return null;
+  }
 
-  const toggle = () => {
-    const next: Pref = currentIsDark ? "light" : "dark";
-    setPref(next);
-    applyTheme(next);
-  };
+  const currentIsDark = pref === null ? systemDark : pref === "dark";
 
   return (
     <button
       type="button"
-      onClick={toggle}
+      onClick={() => {
+        const next: Pref = currentIsDark ? "light" : "dark";
+        setPref(next);
+        applyTheme(next);
+      }}
       className="inline-flex items-center justify-center p-2 rounded-xl hover:bg-card transition
                  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--primary)]
                  focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)]"

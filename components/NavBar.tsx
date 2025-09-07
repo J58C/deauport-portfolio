@@ -85,7 +85,7 @@ export default function NavBar() {
             )}
           </nav>
 
-          <div className="hidden md:flex items-center gap-2">
+          <div className="hidden md:flex items-center justify-center w-10 h-10">
             <ThemeSwitch />
           </div>
 
