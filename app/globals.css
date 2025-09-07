@@ -21,8 +21,8 @@
   --about-bg-light: url("/about-bg-light.svg");
   --about-bg-dark: url("/about-bg-dark.svg");
 
-  --hero-bg-light: url("/home-bg-light.svg");
-  --hero-bg-dark: url("/home-bg-dark.svg");
+  --hero-bg-light: url("/hero-bg-light.svg");
+  --hero-bg-dark: url("/hero-bg-dark.svg");
 
   --about-bg: var(--about-bg-light);
   --hero-bg: var(--hero-bg-light);
